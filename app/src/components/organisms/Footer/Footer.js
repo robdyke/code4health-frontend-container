@@ -9,7 +9,7 @@ class Footer extends Component {
       <StyledFooter>
         <Container>
           <Paragraph>
-            Code4Health & C4H are registered Trademarks of the Apperta Foundation CIC 2016.
+            Code4Health & C4H are registered Trademarks of the Apperta Foundation CIC 2018.
           </Paragraph>
 
           <LocaleSwitcher />
