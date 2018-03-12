@@ -18,29 +18,17 @@ class SignUp extends Component {
     this.props.signUpAction(values, this.props.history)
   }
 
-  errorMessage () {
-    if (this.props.errorMessage) {
-      return (
-        <div>Error {this.props.errorMessage}</div>
-      )
-    }
-  }
-
-  signUpForm () {
-    return (
-      <SignUpTemplate
-        formHandler={this.submit}
-        errorMessage={this.props.errorMessage}
-        success={this.props.success}
-      />
-    )
-  }
-
   render () {
     if (this.props.authenticated) {
       return (<h1>already logged in</h1>)
     } else {
-      return this.signUpForm()
+      return (
+        <SignUpTemplate
+          formHandler={this.submit}
+          errorMessage={this.props.errorMessage}
+          successMessage={this.props.successMessage}
+        />
+      )
     }
   }
 }
@@ -51,7 +39,7 @@ SignUp.propTypes = {
   history: PropTypes.object,
   signUpAction: PropTypes.func,
   signUpUnloadAction: PropTypes.func,
-  success: PropTypes.bool
+  successMessage: PropTypes.string
 }
 
 function mapStateToProps (state) {
@@ -60,7 +48,7 @@ function mapStateToProps (state) {
     error: state.auth.error,
     errorMessage: state.auth.errorMessage,
     loading: state.auth.loading,
-    success: state.auth.success
+    successMessage: state.auth.successMessage
   }
 }
 

@@ -13,8 +13,9 @@ class Checkbox extends Component {
     this.toggleCheck = this.toggleCheck.bind(this)
   }
 
-  toggleCheck () {
+  toggleCheck (e) {
     this.setState({checked: !this.state.checked})
+    this.props.onChangeHandler(e)
   }
 
   render () {
@@ -40,7 +41,8 @@ class Checkbox extends Component {
 Checkbox.propTypes = {
   children: PropTypes.node,
   id: PropTypes.number,
-  checked: PropTypes.bool
+  checked: PropTypes.bool,
+  onChangeHandler: PropTypes.func
 }
 
 export default Checkbox

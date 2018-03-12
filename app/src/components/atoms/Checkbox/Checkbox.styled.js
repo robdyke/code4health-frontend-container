@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   margin: 0 0 1rem 0;
-  padding: 0.5rem;
+  padding: 0;
   font-size: 1.6rem;
 `
 
@@ -11,7 +11,10 @@ const StyledLabel = styled.label`
   display: inline-block;
   margin-left: 0.5rem;
   cursor: pointer;
-  color: #efefef;
+
+  a, a:active {
+    color: black;
+  }
 
   svg {
     border-radius: 50%;

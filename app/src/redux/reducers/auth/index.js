@@ -11,20 +11,28 @@ export default function (state = {}, action) {
       return {...state, authenticated: false}
     case constants.LOG_IN_ERROR:
       return {...state, errorMessage: action.payload}
-    case constants.SIGN_UP_ERROR:
-      return {...state, sign_up_error: action.payload}
     case constants.LOG_IN_UNLOAD:
       return {...state, log_in_error: null}
+
+    // Sign Up
+    case constants.SIGN_UP_IN_PROGRESS:
+      return {...state, errorMessage: null, successMessage: null}
+    case constants.SIGN_UP_ERROR:
+      return {...state, errorMessage: 'auth.signup.error'}
     case constants.SIGN_UP_SUCCESS:
-      return {...state, success: true}
+      return {...state, successMessage: 'auth.signup.success', errorMessage: null}
     case constants.SIGN_UP_UNLOAD:
-      return {...state, sign_up_error: null}
+      return {...state, successMessage: null, errorMessage: null}
+
+    // Activation
     case constants.ACTIVATION_SUCCESS:
       return {...state, activation_successful: true, loading: false}
     case constants.ACTIVATION_IN_PROGRESS:
       return {...state, loading: true}
     case constants.ACTIVATION_ERROR:
       return {...state, error: true, loading: false, errorMessage: 'unable to activate account'}
+
+    // Password Reset
     case constants.PASSWORD_RESET_ERROR:
       return {...state, password_reset_error: action.payload}
     case constants.PASSWORD_RESET_UNLOAD:

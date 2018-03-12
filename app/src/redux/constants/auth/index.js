@@ -9,6 +9,7 @@ export const LOG_IN_UNLOAD = 'log_in_unload'
 export const SIGN_UP_UNLOAD = 'sign_up_unload'
 export const SIGN_UP_ERROR = 'signup_error'
 export const SIGN_UP_SUCCESS = 'signup_success'
+export const SIGN_UP_IN_PROGRESS = 'SIGN_UP_IN_PROGRESS'
 
 export const PASSWORD_RESET_SENT = 'password_reset_sent'
 export const PASSWORD_RESET_ERROR = 'password_reset_error'

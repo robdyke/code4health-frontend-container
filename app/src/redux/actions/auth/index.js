@@ -59,6 +59,7 @@ export function logOutAction () {
 
 export function signUpAction ({email, username, password}, history) {
   return async (dispatch) => {
+    dispatch({type: constants.SIGN_UP_IN_PROGRESS})
     try {
       const res = await axios.post(
         `${URL}/register`,
