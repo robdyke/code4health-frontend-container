@@ -12,10 +12,18 @@ class ProjectCard extends Component {
 
     this.state = {
       showDeleteConfirmation: false,
+      isDeleting: false,
       id: this.props.data.id
     }
     this.cancelDeleteProject = this.cancelDeleteProject.bind(this)
     this.deleteProjectConfirmed = this.deleteProjectConfirmed.bind(this)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.data.id !== this.state.id) {
+      this.setState({isDeleting: false})
+      this.setState({showDeleteConfirmation: false})
+    }
   }
 
   // @todo - duplicated, should be abstracted away
