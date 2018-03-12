@@ -20,7 +20,7 @@ const Button = props => (
 Button.propTypes = {
   children: PropTypes.node,
   type: PropTypes.string,
-  variant: PropTypes.oneOf(['default', 'muted', 'danger']),
+  variant: PropTypes.oneOf(['default', 'muted', 'danger', 'github', 'google']),
   width: PropTypes.oneOf(['full', 'auto']),
   href: PropTypes.string,
   onClick: PropTypes.func,
