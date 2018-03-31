@@ -29,13 +29,17 @@ export const ENGLISH_TRANSLATION = {
           }
         }
       },
-      signUp: {
-        title: 'Sign Up'
+      signup: {
+        title: 'Sign Up',
+        success: 'Successfully signed up',
+        error: 'That account is already in use - please choose another'
       },
       activate: {
         title: 'Activate your account',
         inProgress: 'Activating your account',
-        success: 'Your account has been successfully activated'
+        error: 'Unable to activate your account',
+        success: 'Your account has been successfully activated',
+        nextStep: 'You can now log in to your account'
       }
     },
     projects: {

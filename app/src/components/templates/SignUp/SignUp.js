@@ -10,7 +10,7 @@ const SignUp = props => (
   <div>
     <Masthead>
       <Heading level={2} icon='account'>
-        <FormattedMessage id='auth.signUp.title' />
+        <FormattedMessage id='auth.signup.title' />
       </Heading>
     </Masthead>
     <Grid w={1} p='1rem'>

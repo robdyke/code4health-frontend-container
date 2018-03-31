@@ -101,26 +101,22 @@ export function passwordResetAction ({email}, history) {
   }
 }
 
-function isActivating () {
+export function activateUnload () {
   return {
-    type: constants.ACTIVATION_IN_PROGRESS
+    type: constants.ACTIVATION_UNLOAD
   }
 }
 
 export function activateAccount (key, history) {
   return async (dispatch) => {
-    dispatch(isActivating())
+    dispatch({type: constants.ACTIVATION_IN_PROGRESS})
     try {
-      const res = await axios.get(
+      await axios.get(
         `${URL}/activate?key=${key}`
       )
-      console.log(res)
       dispatch({type: constants.ACTIVATION_SUCCESS})
     } catch (error) {
-      dispatch({
-        type: constants.ACTIVATION_ERROR,
-        payload: error.response.data
-      })
+      dispatch({type: constants.ACTIVATION_ERROR})
     }
   }
 }

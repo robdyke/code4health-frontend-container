@@ -122,8 +122,6 @@ const validate = values => {
     errors.termsAndConditions = 'required'
   }
 
-
-
   if (!Validate.MinimumLength(values.confirmPassword, 4)) {
     errors.confirmPassword = 'password must be at least 4 characters'
   }

@@ -1,4 +1,5 @@
 import Account from '@templates/Account'
+import Activate from '@templates/Activate'
 import LogIn from '@templates/LogIn'
 import LogOut from '@templates/LogOut'
 import PasswordReset from '@templates/PasswordReset'
@@ -9,6 +10,7 @@ import SingleProject from '@templates/SingleProject'
 
 export {
   Account,
+  Activate,
   LogIn,
   LogOut,
   NewProject,

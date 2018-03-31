@@ -26,11 +26,13 @@ export default function (state = {}, action) {
 
     // Activation
     case constants.ACTIVATION_SUCCESS:
-      return {...state, activation_successful: true, loading: false}
+      return {...state, successMessage: 'auth.activate.success', errorMessage: null, loading: false}
     case constants.ACTIVATION_IN_PROGRESS:
       return {...state, loading: true}
     case constants.ACTIVATION_ERROR:
-      return {...state, error: true, loading: false, errorMessage: 'unable to activate account'}
+      return {...state, error: true, loading: false, errorMessage: 'auth.activate.error', successMessage: null}
+    case constants.ACTIVATION_UNLOAD:
+      return {...state, successMessage: null, errorMessage: null, loading: null}
 
     // Password Reset
     case constants.PASSWORD_RESET_ERROR:
